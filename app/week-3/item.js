@@ -1,17 +1,21 @@
-function Item ([ name, quantity, category ]) {
+import React from "react";
+
+function Item({ name, quantity, category }) {
   return (
     <li>
       <div>
-        <p>
+        <span>
           {name}
-        </p>
+        </span>
         <span>
           {quantity}
         </span>
-        <p>
+        <span>
           {category}
-        </p>
+        </span>
       </div>
     </li>
   );
 }
+
+export default Item;
