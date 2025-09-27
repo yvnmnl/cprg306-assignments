@@ -2,8 +2,8 @@ import React from "react";
 
 function Item({ name, quantity, category }) {
   return (
-    <li className="flex justify-items-center flex-col border-1 border-style:solid rounded-sm p-2 mx-22 mb-2">
-      <div>
+    <li>
+        <div className="mb-2 p-2 border rounded shadow-sm bg-gray-200/50 text-black">
         <span>
           {name}
         </span>
