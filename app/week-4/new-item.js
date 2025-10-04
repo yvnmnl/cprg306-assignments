@@ -9,5 +9,13 @@ export default function NewItem({ addItem }) {
       setQuantity(quantity + 1);
     }
   }; 
-
 } 
+
+return (
+  <div>
+    <p>Quantity:</p>
+    <div>
+      <button onClick ={increment} diabled={quantity === 20}> + </button>
+    </div>
+  </div>
+)
