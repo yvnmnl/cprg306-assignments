@@ -5,6 +5,12 @@ import React from "react";
 export default function NewItem() {
   const [quantity, setQuantity] = useState(1);
 
+  const decrement = () => {
+    if (quantity > 1) {
+      setQuantity(quantity - 1);
+    }
+  };
+
   const increment = () => {
     if (quantity < 20) {
       setQuantity(quantity + 1);
@@ -15,6 +21,7 @@ export default function NewItem() {
     <div>
       <p>Quantity: {quantity}</p>
       <div>
+        <button onClick={decrement} disabled={quantity === 1}> - </button>
         <button onClick={increment} disabled={quantity === 20}> + </button>
       </div>
     </div>
