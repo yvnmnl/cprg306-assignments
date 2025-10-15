@@ -15,7 +15,7 @@ export default function NewItem() {
     if (quantity < 20) setQuantity(quantity + 1);
   };
 
-  const categories = ["produce", "dairy", "bakery", "meat", "canned goods", "dry goods", "household"];
+  const categories = ["produce", "dairy", "bakery", "meat", "canned goods", "dry goods", "beverages", "snacks", "household", "other"];
 
   const handleSubmit = (event) => {
     event.preventDefault();
