@@ -12,6 +12,7 @@ export default function HomePage() {
           <Link href="/week-3" className="text-[#373d20] hover:underline font-semibold">Go to Week 3 →</Link>
           <Link href="/week-4" className="text-[#373d20] hover:underline font-semibold">Go to Week 4 →</Link>
           <Link href="/week-5" className="text-[#373d20] hover:underline font-semibold">Go to Week 5 →</Link>
+          <Link href="/week-6" className="text-[#373d20] hover:underline font-semibold">Go to Week 6 →</Link>
         </p>
       </div>
     </main>
