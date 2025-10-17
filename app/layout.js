@@ -1,16 +1,6 @@
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
-export const bubblegum = Bubblegum_Sans({
-  subsets: ["latin"],
-  weight: "400",
-});
-
-export const geist = Geist({
-  subsets: ["latin"],
-});
-
-
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
