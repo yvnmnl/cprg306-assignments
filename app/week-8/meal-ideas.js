@@ -25,8 +25,9 @@ export default function MealIdeas({ ingredient }) {
   };
 
   useEffect(() => {
-    loadMealIdeas();
-  }, [ingredient]);
+  loadMealIdeas(ingredient);
+}, [loadMealIdeas, ingredient]);
+
 
   return (
     <section>
