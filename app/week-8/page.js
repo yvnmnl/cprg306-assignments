@@ -46,27 +46,18 @@ function Page() {
             )}
           </article>
 
-          <article className="bg-gray-200/50 rounded-lg shadow-sm p-4">
+          <article>
             <h3 className="text-xl font-semibold text-black mb-2"> Current Items </h3>
             {items.length === 0 ? (
               <p className="text-gray-500 italic text-center"> No items yet — add one above.</p>
             ) : (
-              <ul className="divide-y divide-gray-300 rounded-lg p-2 text-center">
-                {items.map((item) => (
-                  <li
-                    key={item.id}
-                    className="p-2 hover:bg-gray-100 cursor-pointer transition"
-                    onClick={() => handleSelectItem(item.name)}
-                  >
-                    <p className="font-semibold text-gray-800">{item.name}</p>
-                    <p className="text-sm text-gray-600">
-                      {item.quantity} × {item.category}
-                    </p>
-                  </li>
-                ))}
-              </ul>
+              <ItemList 
+                items={items} 
+                onItemSelect={(item) => handleSelectItem(item.name)} 
+              />
             )}
           </article>
+
         </section>
 
         <section className="w-full md:w-1/2 flex flex-col gap-4">

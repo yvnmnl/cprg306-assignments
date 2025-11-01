@@ -40,7 +40,6 @@ export default function MealIdeas({ ingredient }) {
         <ul className="divide-y divide-gray-200">
           {meals.map((meal) => (
             <li key={meal.idMeal} className="flex items-center gap-3 p-2 hover:bg-gray-200 transition">
-              <img src={meal.strMealThumb} alt={meal.strMeal} className="w-16 h-16 object-cover rounded-md border" />
               <span className="font-medium text-gray-800"> {meal.strMeal} </span>
             </li>
           ))}
