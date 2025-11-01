@@ -38,7 +38,6 @@ export default function NewItem({ onAddItem }) {
       category,
     };
 
-    // Spread operator for readability (optional but clean)
     onAddItem({ ...item });
 
     setName("");
