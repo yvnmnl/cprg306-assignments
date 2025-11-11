@@ -1,12 +1,20 @@
 "use client";
 
-import React from "react";
+import React, { useState, useEffect} from "react";
 import Link from "next/link";
 import { useUserAuth } from "../../contexts/AuthContext";
 
 export default function Page() {
   const { user, gitHubSignIn, firebaseSignOut } = useUserAuth();
 
+  const [loading, setLoading] = useState(true);
+  
+  useEffect(() => {
+    if (user !== undefined) {
+      setLoading(false);
+    }
+  }, [user]);
+  
   const handleLogin = async () => {
     try {
       await gitHubSignIn();
@@ -38,7 +46,7 @@ export default function Page() {
         </section>
       ) : (
         <section className="bg-gray-200/50 rounded-lg shadow-lg p-8 text-center w-full max-w-md">
-          <h1 className="text-2xl font-bold text-[#373d20] mb-4">Welcome{user.displayName}</h1>
+          <h1 className="text-2xl font-bold text-[#373d20] mb-4"> Welcome {user.displayName} </h1>
           <p className="text-[#373d20] mb-8">{user.email}</p>
           <div className="flex flex-col gap-4">
             <Link
