@@ -5,11 +5,24 @@ import ItemList from "./item-list";
 import NewItem from "./new-item";
 import itemsData from "./items.json";
 import MealIdeas from "./meal-ideas";
+import { useUserAuth } from "../../../contexts/AuthContext"; 
+import Link from "next/link";
 
 function Page() {
   const [items, setItems] = useState(itemsData);
   const [showMessage, setShowMessage] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
+  
+  const { user } = useUserAuth();
+
+  if (user === null) {
+    return (
+      <main>
+        <h1>You must be logged in to view the shopping list.</h1>
+        <Link href="/week-9">Click here to Log In</Link>
+      </main>
+    );
+  }
 
   const handleAddItem = (newItem) => {
     setItems([newItem, ...items]);
