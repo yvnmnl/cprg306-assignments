@@ -17,9 +17,17 @@ function Page() {
 
   if (user === null) {
     return (
-      <main>
-        <h1>You must be logged in to view the shopping list.</h1>
-        <Link href="/week-9">Click here to Log In</Link>
+      <main className="min-h-screen bg-gradient-to-b from-[#035718] via-white to-[#fc9fb1] flex items-center justify-center py-8 px-6">
+        <section className="bg-gray-200/50 rounded-lg shadow-lg p-8 text-center w-full max-w-md">
+          <h1 className="text-2xl font-bold text-black mb-4">Access Denied</h1>
+          <p className="text-gray-700 mb-6">You must be logged in to view the shopping list.</p>
+          <Link 
+            href="/week-9" 
+            className="inline-block bg-[#315e26] text-white font-semibold px-6 py-3 rounded hover:bg-[#218838] transition"
+          >
+            Go to Login
+          </Link>
+        </section>
       </main>
     );
   }
@@ -42,8 +50,7 @@ function Page() {
   };
 
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#035718] via-white to-[#fc9fb1] flex flex-col items-center py-8 px-6">
-      
+    <main className="min-h-screen bg-gradient-to-b from-[#035718] via-white via-40% to-[#fc9fb1] flex flex-col items-center py-8 px-6">   
       <header className="w-full max-w-6xl mb-6 text-center">
         <h1 className="text-3xl font-bold text-gray-100"> Shopping List & Meal Ideas </h1>
       </header>
