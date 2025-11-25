@@ -17,3 +17,12 @@ export async function getItems(userId) {
 
   return items;
 }
+
+export async function addItem(userId, item) {
+  if (!userId) throw new Error("User ID is required");
+
+  const itemsRef = collection(db, "users", userId, "items");
+  const docRef = await addDoc(itemsRef, item);
+
+  return docRef.id;
+}
