@@ -50,7 +50,7 @@ export default function Page() {
           <p className="text-[#373d20] mb-8">{user.email}</p>
           <div className="flex flex-col gap-4">
             <Link
-              href="/week-9/shopping-list"
+              href="/week-10/shopping-list"
               className="bg-[#fc9fb1] text-white font-semibold px-6 py-3 rounded hover:bg-[#e08495] transition"
             >
               Go to Shopping List
