@@ -18,11 +18,14 @@ function Page() {
   const loadItems = async () => {
   if (user) {
     const fetchedItems = await getItems(user.uid); 
-    setItems(fetchedItems); // update state with fetched items
-  }
-};
+    setItems(fetchedItems); 
+    }
+  };
 
-
+  useEffect(() => {
+    loadItems(); 
+  }, [user]);
+   
   const handleAddItem = (newItem) => {
     setItems([newItem, ...items]);
     setShowMessage(true);
