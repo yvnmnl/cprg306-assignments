@@ -26,8 +26,12 @@ function Page() {
     loadItems(); 
   }, [user]);
    
-  const handleAddItem = (newItem) => {
-    setItems([newItem, ...items]);
+  const handleAddItem = async (newItem) => {
+    if (!user) return;
+
+    const id = await addItem(user.uid, newItem);
+    const itemWithId = { ...newItem, id };
+    setItems([itemWithId, ...items]);
     setShowMessage(true);
   };
 
