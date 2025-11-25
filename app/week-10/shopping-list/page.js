@@ -9,12 +9,20 @@ import Link from "next/link";
 import { getItems, addItem } from "../_services/shopping-list-service";
 
 function Page() {
-  const [items, setItems] = useState(itemsData);
+  const [items, setItems] = useState([]);
   const [showMessage, setShowMessage] = useState(false);
   const [selectedItem, setSelectedItem] = useState(null);
   
   const { user } = useUserAuth();
   
+  const loadItems = async () => {
+  if (user) {
+    const fetchedItems = await getItems(user.uid); 
+    setItems(fetchedItems); // update state with fetched items
+  }
+};
+
+
   const handleAddItem = (newItem) => {
     setItems([newItem, ...items]);
     setShowMessage(true);
