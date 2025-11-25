@@ -6,6 +6,7 @@ import NewItem from "./new-item";
 import MealIdeas from "./meal-ideas";
 import { useUserAuth } from "../../../contexts/AuthContext"; 
 import Link from "next/link";
+import { getItems, addItem } from "../_services/shopping-list-service";
 
 function Page() {
   const [items, setItems] = useState(itemsData);
